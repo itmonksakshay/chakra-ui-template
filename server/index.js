@@ -5,6 +5,6 @@ app.use(express.static('./dist'));
 app.get('*', function(request,response) {
 	response.sendFile(path.join(__dirname,"/../dist/index.html"));
 });
-app.listen(3000,function(){
+app.listen(process.env.PORT||3000,function(){
 	console.log("the server is running on port 4000");
 });
