@@ -1,21 +1,27 @@
 import React from 'react';
 import {Box,Stack,PseudoBox,Link} from '@chakra-ui/core';
 
-const LeftNavItem =(props)=>(<PseudoBox as="li" 
+const ListItem=(props)=>(<PseudoBox as="li" 
   display="inline" 
-  borderRight="1px" 
-  borderStyle="solid" 
-  borderColor="white" 
-  {...props}/>);
+  borderRight={1} 
+  borderRightStyle="solid" 
+  borderRightColor="white"
+  pt="0.1rem"
+  pr="0.5rem"
+  pl="0.5rem"
+  pb="0.1rem"{...props}>
+  <Link href="#" color="primary.10" textDecoration="none">{props.children}</Link>
+  </PseudoBox>);
 
 const  LeftNav =()=>(<Box flex="basis" w="auto" maxW="none" pos="relative" minH={1} pr={15} pl={15} mr="auto">
-    <Stack as="ul" styleType="none" m={0} p={0 } fontSize={13} fontFamily="Open Sans, sans-serif">
-      <LeftNavItem><Link color="primary.10" textDecoration="none" href="tel:919113923240">+91 9113923240</Link></LeftNavItem>
-      <LeftNavItem><Link color="primary.10" textDecoration="none" href="mailto:codepluck@codepluck.com">codepluck@codepluck.com</Link></LeftNavItem>
- </Stack></Box>);
+    <Stack as="ul" display="block" listStyleType="none" m={0} p={0 } fontSize={13} fontFamily="Open Sans, sans-serif">
+      <ListItem>+91 9113923240</ListItem>
+      <ListItem>codepluck@codepluck.com</ListItem>
+    </Stack>
+ </Box>);
 
-function TopNav() {
- return(<Box pos="relative" 
+export default function TopNav(){
+ return (<Box pos="relative" 
     w="100%" 
     pr={15} 
     pl={15} 
@@ -30,4 +36,3 @@ function TopNav() {
     </Box>
   </Box>);
 }
-export default TopNav;
