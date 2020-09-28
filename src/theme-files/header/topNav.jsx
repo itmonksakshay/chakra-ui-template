@@ -45,7 +45,7 @@ export default function TopNav(){
     bg="primary.20"
     pt="0.5rem" 
     pb="0.5rem"
-    display ={["","","block",""]}>
+    display ={["none","none","none","block"]}>
     <Box display="flex" mr={-15} ml={-15} flexWrap="wrap">
      <LeftNav/>
      <RightNav/>
