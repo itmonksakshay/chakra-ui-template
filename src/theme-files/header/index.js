@@ -3,6 +3,8 @@ import {Box} from '@chakra-ui/core';
 import TopNav from './topNav';
 import HeaderLogo from './headerLogo';
 import SearchBox from './search';
+import HeaderWidget from './headerWidget';
+import Nav from './mainNav';
 const MainHeader =(props)=>(<Box as="header" display="flex" mr={-15} ml={-15} flexWrap="wrap" {...props}/>);
 export default class Header extends Component {
   render(props){
@@ -12,7 +14,9 @@ export default class Header extends Component {
        <Box display="flex" flexWrap="wrap" mr={-15} ml={-15}>
         <HeaderLogo/>
         <SearchBox/>
+        <HeaderWidget/>
        </Box>
+       <Nav/>
       </Box>
      </MainHeader>);
   }
