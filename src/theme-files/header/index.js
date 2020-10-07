@@ -4,6 +4,7 @@ import TopNav from './topNav';
 import HeaderLogo from './headerLogo';
 import SearchBox from './search';
 import HeaderWidget from './headerWidget';
+import MobileMenu from './mobileMenu';
 import Nav from './mainNav';
 const MainHeader =(props)=>(<Box as="header" display="flex" mr={-15} ml={-15} flexWrap="wrap" {...props}/>);
 export default class Header extends Component {
@@ -14,7 +15,9 @@ export default class Header extends Component {
        <Box display="flex" flexWrap="wrap" mr={-15} ml={-15}>
         <HeaderLogo/>
         <SearchBox/>
-        <HeaderWidget/>
+        <HeaderWidget>  
+          <MobileMenu/>
+        </HeaderWidget>
        </Box>
        <Nav/>
       </Box>
