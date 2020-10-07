@@ -2,7 +2,7 @@ import React from 'react';
 import {Box,Link} from '@chakra-ui/core';
 import {AiFillHeart,AiOutlineShoppingCart,AiOutlineMoneyCollect} from "react-icons/ai"
 import {HiOutlineCurrencyRupee} from "react-icons/hi";
-export default  function HeaderWidget(){
+export default  function HeaderWidget({children}){
   
   const HeaderLink=(props,{link})=>(<Link href={link}
        pt="0.25rem"
@@ -20,6 +20,10 @@ export default  function HeaderWidget(){
     pos="relative"
     pr={15}
     pl={15}>
+      {children}
+    <Box w={["75%","75%","75%","100%"]}
+     display="inline-block"
+     float="left">
       <HeaderLink link="#"><AiFillHeart style={{display:"inline-block"}}/><Box as="span">10</Box></HeaderLink>
       <HeaderLink link="#">
         <AiOutlineShoppingCart style={{display:"inline-block"}}/>
@@ -28,5 +32,6 @@ export default  function HeaderWidget(){
         <Box as="span" display="inline-block" mr="0.5rem">  2,000 </Box>
         <HiOutlineCurrencyRupee style={{display:"inline-block"}} />
       </HeaderLink>
+    </Box>
     </Box>);
 }
