@@ -3,6 +3,15 @@ import {Box,Stack,PseudoBox,IconButton,Button,Image} from '@chakra-ui/core';
 import {GrFormNext,GrFormPrevious} from 'react-icons/gr?size=32';
 
 var sliderIndex = 0;
+var autoSlideIndex =0;
+
+const autoSlide=(refer)=>{
+  refer.map((element)=>element.current.style.display="none");
+  autoSlideIndex++;
+  (autoSlideIndex>refer.length-1)?(autoSlideIndex = 0):(null);
+  refer[autoSlideIndex].current.style.display="inline-block";
+  return null;
+}
 
 const showSlides=(value,refer)=>{
   (value>refer.current.length-1)?(sliderIndex = 0):(null);
@@ -27,6 +36,10 @@ export default function Slider(){
   
   useEffect(() => {  
     divRef.current[0].current.style.display="inline-block";
+    const timer = setInterval(() => {
+      autoSlide(divRef.current)
+    },3000);
+    return () => clearInterval(timer);
   });
 
   return(<Box maxW="100%" w="100%" pos="relative" flexBasis="100%">
